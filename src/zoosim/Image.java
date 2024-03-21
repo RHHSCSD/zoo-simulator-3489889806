@@ -8,9 +8,8 @@ package zoosim;
  *
  * @author jonat
  */
-public interface IObject {
+public class Image {
 
-    public void turn(double radians);
-
-    public void place(int x, int y);
+    int height;
+    int width;
 }

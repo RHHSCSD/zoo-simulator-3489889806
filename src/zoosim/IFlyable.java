@@ -14,5 +14,5 @@ public interface IFlyable {
 
     public void land();
 
-    public void isFlying();
+    public boolean isFlying();
 }

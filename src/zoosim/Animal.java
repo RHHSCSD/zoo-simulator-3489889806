@@ -1,9 +1,9 @@
+package zoosim;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package zoosim;
-
 /**
  *
  * @author jonat
@@ -15,8 +15,8 @@ public abstract class Animal implements IEntity {
     String species;
     boolean male;
     int age;
-    direction posX;
-    direction posY;
+    double posX;
+    double posY;
     String Size;
     double speed;
     double direction;
@@ -63,5 +63,16 @@ public abstract class Animal implements IEntity {
      */
     public void turn(double radians) {
         direction += radians;
+    }
+
+    @Override
+    public void turn() {
+        direction += Math.pi / 4;
+    }
+
+    @Override
+    public void place(int x, int y) {
+        posX = x;
+        posY = y;
     }
 }

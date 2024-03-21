@@ -8,9 +8,5 @@ package zoosim;
  *
  * @author jonat
  */
-public interface IObject {
-
-    public void turn(double radians);
-
-    public void place(int x, int y);
+public class LandAnim extends Animal {
 }

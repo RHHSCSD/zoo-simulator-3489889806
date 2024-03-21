@@ -8,9 +8,18 @@ package zoosim;
  *
  * @author jonat
  */
-public interface IObject {
+public class WaterAnim extends Animal implements ISwimmable {
 
-    public void turn(double radians);
+    boolean canBreathe;
 
-    public void place(int x, int y);
+    @Override
+    public void surface() {
+        canBreathe = false;
+    }
+
+    @Override
+    public boolean canSurface() {
+        return canBreathe;
+    }
+
 }
