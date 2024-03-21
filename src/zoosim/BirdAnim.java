@@ -13,16 +13,25 @@ public class BirdAnim extends Animal implements IFlyable {
     boolean canFly;
 
     @Override
+    /**
+     * makes the avian fly.
+     */
     public void fly() {
         canFly = true;
     }
 
     @Override
+    /**
+     * makes the avian land.
+     */
     public void land() {
         canFly = false;
     }
 
     @Override
+    /**
+     * @return if the avian is airborne
+     */
     public boolean isFlying() {
         return canFly;
     }
