@@ -10,11 +10,7 @@ package zoosim;
  */
 public interface IObject {
 
-    public void turn(int degrees) {
+    public void turn(int degrees);
 
-    }
-
-    public void place(int x, int y) {
-
-    }
+    public void place(int x, int y);
 }

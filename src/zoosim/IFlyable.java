@@ -8,9 +8,11 @@ package zoosim;
  *
  * @author jonat
  */
-public class image {
+public interface IFlyable {
 
-    double int width;
-    double int height;
+    public void fly();
 
+    public void land();
+
+    public void isFlying();
 }
