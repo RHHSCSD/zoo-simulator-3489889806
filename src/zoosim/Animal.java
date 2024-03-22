@@ -1,5 +1,7 @@
 package zoosim;
 
+import static java.lang.Math.max;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -19,6 +21,7 @@ public abstract class Animal implements IEntity {
     double posY;
     String Size;
     double speed;
+    final int MAXSPEED;
     double direction;
     int hunger;
     int fatigue;
@@ -37,8 +40,8 @@ public abstract class Animal implements IEntity {
      * moves animal one time step.
      */
     public void move() {
-        posX += speed * Math.cos(direction);
-        posY += speed * Math.sin(direction);
+        posX += max(speed * Math.cos(direction), MAXSPEED);
+        posY += max(speed * Math.sin(direction), MAXSPEED);
     }
 
     /**
@@ -56,6 +59,7 @@ public abstract class Animal implements IEntity {
         fatigue = 0;
     }
 
+    @Override
     /**
      * turns the animal's movement direction (in radians).
      *
@@ -63,11 +67,11 @@ public abstract class Animal implements IEntity {
      */
     public void turn(double radians) {
         direction += radians;
+        direction %= 2 * Math.PI;
     }
 
-    @Override
     public void turn() {
-        direction += Math.pi / 4;
+        direction += Math.PI / 4;
     }
 
     @Override
