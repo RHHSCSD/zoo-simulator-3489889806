@@ -28,56 +28,67 @@ public abstract class Animal implements IEntity {
     Image image;
     String sound;
 
-    @Override
     /**
      * prints the sound that the animal makes.
      */
+    @Override
     public void makeSound() {
         System.out.println(sound);
     }
 
-    @Override
     /**
      * moves animal one time step.
      */
+    @Override
     public void move() {
         final double conversionFactor = Math.PI / 180;
         posX += max(speed * Math.cos(direction * conversionFactor), MAXSPEED);
         posY += max(speed * Math.sin(direction * conversionFactor), MAXSPEED);
     }
 
-    @Override
     /**
      * resets animal hunger.
      */
+    @Override
     public void eat() {
         hunger = 0;
     }
 
-    @Override
     /**
      * resets animal fatigue.
      */
+    @Override
     public void sleep() {
         fatigue = 0;
     }
 
-    @Override
     /**
-     * turns the animal's movement direction (in radians).
+     * turns the animal's movement direction (in degrees).
      *
-     * @param radians
+     * @param degrees degrees to rotate the animal's direction
+     * (counterclockwise)
      */
+    @Override
     public void turn(int degrees) {
         direction += degrees;
         direction %= 360;
     }
 
+    /**
+     * rotate the animal's movement direction 90 degrees
+     */
     public void turn() {
         direction += 90;
         direction %= 360;
     }
 
+    /**
+     * (
+     * places the animal on the x and y position specified
+     *
+     * @param x the x position to place the animal.
+     * @param y the y position to place the animal.
+     */
     @Override
     public void place(int x, int y) {
         posX = x;

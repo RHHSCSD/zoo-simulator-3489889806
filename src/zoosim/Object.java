@@ -16,19 +16,25 @@ public class Object implements IObject {
     String size;
     double direction;
 
-    @Override
     /**
-     * rotates(?) the object???
+     * rotates the direction of the object
+     *
+     * @param degrees degrees to rotate the object (counter clockwise)
      */
+    @Override
     public void turn(int degrees) {
         direction += degrees;
         degrees %= 360;
     }
 
-    @Override
     /**
-     * sets the object down.
+     * sets the object down
+     *
+     * @param x x position to set the object at
+     * @param y y position to set the object at
      */
+    @Override
+
     public void place(int x, int y) {
         posX = x;
         posY = y;
