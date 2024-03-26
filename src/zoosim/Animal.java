@@ -36,14 +36,17 @@ public abstract class Animal implements IEntity {
         System.out.println(sound);
     }
 
+    @Override
     /**
      * moves animal one time step.
      */
     public void move() {
-        posX += max(speed * Math.cos(direction), MAXSPEED);
-        posY += max(speed * Math.sin(direction), MAXSPEED);
+        final double conversionFactor = Math.PI / 180;
+        posX += max(speed * Math.cos(direction * conversionFactor), MAXSPEED);
+        posY += max(speed * Math.sin(direction * conversionFactor), MAXSPEED);
     }
 
+    @Override
     /**
      * resets animal hunger.
      */
@@ -65,13 +68,14 @@ public abstract class Animal implements IEntity {
      *
      * @param radians
      */
-    public void turn(double radians) {
-        direction += radians;
-        direction %= 2 * Math.PI;
+    public void turn(int degrees) {
+        direction += degrees;
+        direction %= 360;
     }
 
     public void turn() {
-        direction += Math.PI / 4;
+        direction += 90;
+        direction %= 360;
     }
 
     @Override

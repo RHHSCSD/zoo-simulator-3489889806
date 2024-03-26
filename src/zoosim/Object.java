@@ -14,12 +14,15 @@ public class Object implements IObject {
     double posX;
     double posY;
     String size;
+    double direction;
 
     @Override
     /**
      * rotates(?) the object???
      */
-    public void turn(double radians) {
+    public void turn(int degrees) {
+        direction += degrees;
+        degrees %= 360;
     }
 
     @Override

@@ -10,7 +10,7 @@ package zoosim;
  */
 public interface IObject {
 
-    public void turn(double radians);
+    public void turn(int degrees);
 
     public void place(int x, int y);
 }
