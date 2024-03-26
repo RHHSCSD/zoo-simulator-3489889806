@@ -15,6 +15,22 @@ public class Zoo {
     ArrayList<Animal> animals;
 
     /**
+     * initializes the zoo with zero animals.
+     */
+    public Zoo() {
+        this.animals = new ArrayList<>(0);
+    }
+
+    /**
+     * initializes the zoo with the list of given animals
+     *
+     * @param animals
+     */
+    public Zoo(ArrayList<Animal> animals) {
+        this.animals = animals;
+    }
+
+    /**
      * adds animal to the zoo.
      *
      * @param a animal to add to the zoo

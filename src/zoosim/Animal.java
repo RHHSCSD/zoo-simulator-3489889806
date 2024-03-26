@@ -29,6 +29,23 @@ public abstract class Animal implements IEntity {
     String sound;
 
     /**
+     *
+     * @param name name of the animal.
+     * @param species species of the animal.
+     * @param x x position of the animal.
+     * @param y y position of the animal.
+     */
+    public Animal(String name, String species, int x, int y) {
+        this.name = name;
+        this.species = species;
+        this.posX = x;
+        this.posY = y;
+        this.hunger = 0;
+        this.direction = 0;
+        this.fatigue = 0;
+    }
+
+    /**
      * prints the sound that the animal makes.
      */
     @Override
